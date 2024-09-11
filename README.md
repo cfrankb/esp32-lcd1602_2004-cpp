@@ -1,4 +1,4 @@
-# Demo Project: ESP-32 tm1637 driven LED library for the ESP-IDF
+# Demo Project: ESP-32 LCD1602/2004 driver C++ library for the ESP-IDF
 
 ## Introduction
 
@@ -31,7 +31,7 @@ idf.py menuconfig
 idf.py flash
 ```
 
-## Suggested wiring for the LCD1602/2004 LCD display
+## Suggested wiring for the LCD 1602/2004 12c Display Module
 
 | LCD1602/2004   | wirecolor | GPIO Pin   |
 | -------- | --------- | ---------- |
