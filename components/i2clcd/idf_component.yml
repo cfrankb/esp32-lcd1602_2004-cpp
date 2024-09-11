@@ -1,0 +1,8 @@
+-version: "1.0.0"
+description: ESP IDF i2c implementation of the LCD driver for 1602 and 2004
+url: https://github.com/cfrankb/esp32-lcd1602_2004-cpp
+dependencies:
+  ## Required IDF version
+  idf:
+    version: ">=5.3"
+

@@ -1,0 +1,5 @@
+https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/peripherals/lcd/i2c_lcd.html
+
+https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/peripherals/i2c.html
+
+https://github.com/espressif/esp-idf/blob/master/examples/peripherals/i2c/i2c_tools/main/cmd_i2ctools.c
