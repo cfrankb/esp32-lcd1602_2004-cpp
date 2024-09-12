@@ -2,3 +2,4 @@
 build/
 junk/
 dependencies.lock
+sdkconfig*

@@ -32,9 +32,9 @@ private:
     bool _removeDevice();
     bool _writeTo(const uint8_t *data, const size_t size);
     void _delay(const int msec);
-    void _hal_write_command(uint8_t cmd) override;
-    void _hal_write_data(uint8_t data);
-    void _hal_write_init_nibble(uint8_t nibble);
+    void _hal_write_command(const uint8_t cmd) override;
+    void _hal_write_data(const uint8_t data);
+    void _hal_write_init_nibble(const uint8_t nibble);
     void _hal_backlight_on() override;
     void _hal_backlight_off() override;
     i2c_master_bus_handle_t m_i2c_bus = nullptr;

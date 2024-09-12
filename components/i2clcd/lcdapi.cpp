@@ -103,7 +103,7 @@ void LcdApi::backlight_off()
 ///        position is zero based (i.e. cursor_x == 0 indicates first column).
 /// @param cursor_x
 /// @param cursor_y
-void LcdApi::move_to(int cursor_x, int cursor_y)
+void LcdApi::move_to(const int cursor_x, const int cursor_y)
 {
     m_cursor_x = cursor_x;
     m_cursor_y = cursor_y;
@@ -122,7 +122,7 @@ void LcdApi::move_to(int cursor_x, int cursor_y)
 /// @brief Writes the indicated character to the LCD at the current cursor
 ///        position, and advances the cursor by one position.
 /// @param ch ascii character
-void LcdApi::putchar(char ch)
+void LcdApi::putchar(const char ch)
 {
     if (ch == '\n')
     {
@@ -166,10 +166,9 @@ void LcdApi::putstr(const char *s)
 ///        as chr(0) through chr(7).
 /// @param location
 /// @param charmap
-void LcdApi::custom_char(int location, uint8_t charmap[8])
+void LcdApi::custom_char(const int location, const uint8_t charmap[8])
 {
-    location &= 0x7;
-    _hal_write_command(LCD_CGRAM | (location << 3));
+    _hal_write_command(LCD_CGRAM | ((location & 0x7) << 3));
     _hal_sleep_us(40);
     for (int i = 0; i < 8; ++i)
     {
@@ -181,7 +180,7 @@ void LcdApi::custom_char(int location, uint8_t charmap[8])
 
 /// @brief Sleep for some time (given in microseconds).
 /// @param usecs microseconds delay
-void LcdApi::_hal_sleep_us(uint32_t usecs)
+void LcdApi::_hal_sleep_us(const uint32_t usecs)
 {
     ets_delay_us(usecs);
 }

@@ -54,7 +54,7 @@ I2CLCD::~I2CLCD()
 
 /// @brief  Writes an initialization nibble to the LCD.
 /// @param nibble
-void I2CLCD::_hal_write_init_nibble(uint8_t nibble)
+void I2CLCD::_hal_write_init_nibble(const uint8_t nibble)
 {
     // This particular function is only used during initialization.
     const uint8_t byte = ((nibble >> 4) & 0x0f) << SHIFT_DATA;
@@ -66,7 +66,7 @@ void I2CLCD::_hal_write_init_nibble(uint8_t nibble)
 
 /// @brief Write a command to the LCD. Data is latched on the falling edge of E.
 /// @param cmd
-void I2CLCD::_hal_write_command(uint8_t cmd)
+void I2CLCD::_hal_write_command(const uint8_t cmd)
 {
     uint8_t byte = ((m_backlight << SHIFT_BACKLIGHT) |
                     (((cmd >> 4) & 0x0f) << SHIFT_DATA));
@@ -90,7 +90,7 @@ void I2CLCD::_hal_write_command(uint8_t cmd)
 
 /// @brief Write data to the LCD. Data is latched on the falling edge of E.
 /// @param data
-void I2CLCD::_hal_write_data(uint8_t data)
+void I2CLCD::_hal_write_data(const uint8_t data)
 {
     uint8_t byte = (MASK_RS |
                     (m_backlight << SHIFT_BACKLIGHT) |

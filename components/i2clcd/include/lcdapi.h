@@ -1,6 +1,7 @@
-#include "ilcdapi.h"
+#pragma once
 
-class LcdApi : public ILcdApi
+#include "inttypes.h"
+class LcdApi
 {
 public:
     LcdApi(int num_lines, int num_columns);
@@ -14,10 +15,10 @@ public:
     void display_off();
     void backlight_on();
     void backlight_off();
-    void move_to(int cursor_x, int cursor_y);
-    void putchar(char ch);
+    void move_to(const int cursor_x, const int cursor_y);
+    void putchar(const char ch);
     void putstr(const char *s);
-    void custom_char(int location, uint8_t charmap[8]);
+    void custom_char(const int location, const uint8_t charmap[8]);
 
     enum
     {
@@ -59,7 +60,11 @@ protected:
     bool m_implied_newline;
 
     void postInit();
-    void _hal_sleep_us(uint32_t usecs);
+    void _hal_sleep_us(const uint32_t usecs);
+    virtual void _hal_write_command(const uint8_t cmd) = 0;
+    virtual void _hal_write_data(const uint8_t cmd) = 0;
+    virtual void _hal_backlight_on() = 0;
+    virtual void _hal_backlight_off() = 0;
 
 private:
 };
