@@ -33,14 +33,14 @@ idf.py flash
 
 ## Suggested wiring for the LCD 1602/2004 12c Display Module
 
-| LCD1602/2004   | wirecolor | GPIO Pin   |
-| -------- | --------- | ---------- |
-| SDA      | blue      | 21         |
-| SCL      | green     | 22         |
-| GRN      | black     | GRN        |
-| VCC      | red       | 5v *       |
+| LCD1602/2004 | wirecolor | GPIO Pin |
+| ------------ | --------- | -------- |
+| SDA          | blue      | 21       |
+| SCL          | green     | 22       |
+| GRN          | black     | GRN      |
+| VCC          | red       | 5v *     |
 
-* most models use 5v. There are some variants that operate on 3.3v. Check documentation before proceeding.
+\* most models use 5v. There are some variants that operate on 3.3v. Check documentation before proceeding.
 
 ## Tested hardware
 
@@ -49,6 +49,6 @@ TBA
 
 ## Source Code
 
-The source is available from [GitHub cfrankb/esp32-tm1637plus-cpp](https://github.com/cfrankb/esp32-lcd1602_2004-cpp).
+The source is available from [GitHub cfrankb/esp32-lcd1602_2004-cpp](https://github.com/cfrankb/esp32-lcd1602_2004-cpp).
 
 
